@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, Main2Activity.class);
         editText1 = (EditText) findViewById(R.id.editText1);
         editText2 = (EditText) findViewById(R.id.editText2);
-        intent.putExtra("VALUE1", (Parcelable) editText1);
-        intent.putExtra("VALUE2", (Parcelable) editText2);
+        intent.putExtra("VALUE1", editText1.getText().toString());
+        intent.putExtra("VALUE2", editText2.getText().toString());
         startActivity(intent);
     }
 }
