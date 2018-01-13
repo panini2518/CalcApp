@@ -13,11 +13,10 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Intent intent = getIntent();
-        int value1 = intent.getIntExtra("VALUE1", 0);
-        int value2 = intent.getIntExtra("VALUE2", 0);
+        String value3 = intent.getStringExtra("rVALUE");
 
         TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(String.valueOf(value1 + value2));
+        textView.setText(String.valueOf(value3));
 
     }
 }
