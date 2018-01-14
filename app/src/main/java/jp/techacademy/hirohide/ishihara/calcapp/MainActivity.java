@@ -37,33 +37,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
-        editText1 = (EditText) findViewById(R.id.editText1);
-        editText2 = (EditText) findViewById(R.id.editText2);
-        editText1c = editText1.getText().toString();
-        editText2c = editText2.getText().toString();
-        double Evalue1 = Double.parseDouble(editText1c);
-        double Evalue2 = Double.parseDouble(editText2c);
+        try{
+            editText1 = (EditText) findViewById(R.id.editText1);
+            editText2 = (EditText) findViewById(R.id.editText2);
+            editText1c = editText1.getText().toString();
+            editText2c = editText2.getText().toString();
+            double Evalue1 = Double.parseDouble(editText1c);
+            double Evalue2 = Double.parseDouble(editText2c);
 
-        if(v.getId() == R.id.plus){
-            Intent intent = new Intent(this, Main2Activity.class);
-            String Rvalue = String.valueOf(Evalue1 + Evalue2);
-            intent.putExtra("rVALUE", Rvalue);
-            startActivity(intent);
-        }else if(v.getId() == R.id.minus){
-            Intent intent = new Intent(this, Main2Activity.class);
-            String Rvalue = String.valueOf(Evalue1 - Evalue2);
-            intent.putExtra("rVALUE", Rvalue);
-            startActivity(intent);
-        }else if(v.getId() == R.id.multiply) {
-            Intent intent = new Intent(this, Main2Activity.class);
-            String Rvalue = String.valueOf(Evalue1 * Evalue2);
-            intent.putExtra("rVALUE", Rvalue);
-            startActivity(intent);
-        }else if(v.getId() == R.id.divide) {
-            Intent intent = new Intent(this, Main2Activity.class);
-            String Rvalue = String.valueOf(Evalue1 / Evalue2);
-            intent.putExtra("rVALUE", Rvalue);
-            startActivity(intent);
+            if (v.getId() == R.id.plus) {
+                Intent intent = new Intent(this, Main2Activity.class);
+                String Rvalue = String.valueOf(Evalue1 + Evalue2);
+                intent.putExtra("rVALUE", Rvalue);
+                startActivity(intent);
+            } else if (v.getId() == R.id.minus) {
+                Intent intent = new Intent(this, Main2Activity.class);
+                String Rvalue = String.valueOf(Evalue1 - Evalue2);
+                intent.putExtra("rVALUE", Rvalue);
+                startActivity(intent);
+            } else if (v.getId() == R.id.multiply) {
+                Intent intent = new Intent(this, Main2Activity.class);
+                String Rvalue = String.valueOf(Evalue1 * Evalue2);
+                intent.putExtra("rVALUE", Rvalue);
+                startActivity(intent);
+            } else if (v.getId() == R.id.divide) {
+                Intent intent = new Intent(this, Main2Activity.class);
+                String Rvalue = String.valueOf(Evalue1 / Evalue2);
+                intent.putExtra("rVALUE", Rvalue);
+                startActivity(intent);
+            }
+        }catch(Exception e){
+            System.out.println("例外が発生しました。");
         }
     }
 }
